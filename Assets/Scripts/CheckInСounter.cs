@@ -27,6 +27,7 @@ public class CheckInСounter : MonoBehaviour
     private void Start()
     {
         _startText = _checkInText.text;
+        _checkInText.text = _checkInCounter.ToString() + " " + _startText;
     }
 
     private void OnTriggerEnter(Collider collider)
@@ -45,9 +46,7 @@ public class CheckInСounter : MonoBehaviour
                     SaveCheckInCounter();
                     Finished?.Invoke(); //объявляем финиш
                 }
-            }
-
-            _checkInText.text = _checkInCounter.ToString() + " " + _startText;
+            }  
         }
     }
 
